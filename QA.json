@@ -1,0 +1,128 @@
+{
+    "version": "1.0",
+    "data": [
+      {
+        "source": "wikipedia",
+        "id": "3zotghdk5ibi9cex97fepx7jetpso7",
+        "filename": "Vatican_Library.txt",
+        "story": "Elon Musk, the CEO of SpaceX and Tesla, Inc., is known for his ambitious projects that aim to revolutionize transportation both on Earth and in space.",
+        "questions": [
+          {
+            "input_text": "What companies does Elon Musk lead?",
+            "turn_id": 1
+          },
+          {
+            "input_text": "What is Elon Musk known for?",
+            "turn_id": 2
+          },
+          {
+            "input_text": "What are his goals with these companies?",
+            "turn_id": 3
+          },
+          {
+            "input_text": "Has he achieved any significant milestones?",
+            "turn_id": 4
+          },
+          {
+            "input_text": "What projects is he currently working on?",
+            "turn_id": 5
+          },
+          {
+            "input_text": "How does he plan to revolutionize transportation?",
+            "turn_id": 6
+          },
+          {
+            "input_text": "What challenges has he faced?",
+            "turn_id": 7
+          },
+          {
+            "input_text": "What's his vision for the future of space exploration?",
+            "turn_id": 8
+          },
+          {
+            "input_text": "How does he fund his ambitious projects?",
+            "turn_id": 9
+          },
+          {
+            "input_text": "What impact has Elon Musk had on the tech industry?",
+            "turn_id": 10
+          }
+        ],
+          "answers": [
+          {
+            "span_start": 151,
+            "span_end": 179,
+            "span_text": "Elon Musk leads SpaceX and Tesla, Inc.",
+            "input_text": "SpaceX and Tesla, Inc.",
+            
+            "turn_id": 1
+          },
+          {
+            "span_start": 454,
+            "span_end": 494,
+            "span_text": "Vatican Library is a research library for history, law, philosophy, science and theology",
+            "input_text": "philosophy, science and theology",
+            "turn_id": 2
+          },
+          {
+            "span_start": 457,
+            "span_end": 511,
+            "span_text": "Known for ambitious projects to revolutionize transportation on Earth and in space.",
+            "input_text": "Revolutionizing transportation on Earth and in space",
+            "turn_id": 3
+          },
+          {
+            "span_start": 457,
+            "span_end": 545,
+            "span_text": "Aims to make life multiplanetary and accelerate the world's transition to sustainable energy.",
+            "input_text": "Making life multiplanetary and transitioning to sustainable energy",
+            
+            "turn_id": 4
+          },
+          {
+            "span_start": 769,
+            "span_end": 879,
+            "span_text": "Achieved significant milestones in reusable rockets and electric vehicles.",
+            "input_text": "Reusable rockets and electric vehicles",
+            "turn_id": 5
+          },
+          {
+            "span_start": 1048,
+            "span_end": 1127,
+            "span_text": "Working on the Starship project for Mars colonization and the expansion of the Tesla product line.",
+            "input_text": "Starship project and Tesla expansion",
+            "turn_id": 6
+          },
+          {
+            "span_start": 1048,
+            "span_end": 1128,
+            "span_text": "Plans include developing fully reusable spacecraft and advancing electric vehicle technology.",
+            "input_text": "Reusable spacecraft and advanced electric vehicle technology",
+            "turn_id": 7
+          },
+          {
+            "span_start": 4,
+            "span_end": 94,
+            "span_text": "Faced challenges like rocket explosions and production delays, but has overcome them.",
+            "input_text": "Rocket explosions and production delays",
+            "turn_id": 8
+          },
+          {
+            "span_start": 94,
+            "span_end": 150,
+            "span_text": "Vision includes establishing a human presence on Mars and making space travel affordable.",
+            "input_text": "Human presence on Mars and affordable space travel",
+            "turn_id": 9
+          },
+          {
+            "span_start": 328,
+            "span_end": 412,
+            "span_text": "Funds projects through company profits, government contracts, and private investments.",
+            "input_text": "Company profits, government contracts, private investments",
+            "turn_id": 10
+          }
+          ],
+          "name": "cnn_142f58b7f3c286c81d407c80e46766f512085dbf.story"
+      }
+    ]
+  }

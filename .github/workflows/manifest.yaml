@@ -1,0 +1,53 @@
+name: LLM Pipeline CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Set up Google Cloud
+        uses: google-github-actions/setup-gcloud@v0.2.0
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          project_id: ${{ secrets.PROJECT_ID }}
+          export_default_credentials: true
+
+      - name: Configure Docker for Google Artifact Registry
+        run: gcloud auth configure-docker europe-west3-docker.pkg.dev --quiet
+
+      - name: Build and push Docker image to Google Artifact Registry
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: europe-west3-docker.pkg.dev/${{ secrets.PROJECT_ID }}/maamoun/llm_pipeline:latest
+
+  kubeflow-pipeline-deployment:
+    runs-on: ubuntu-latest
+    needs: build-and-push-docker
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: Install kfp
+        run: pip install kfp==1.8.22
+        
+      - name: Compile and Deploy Kubeflow Pipeline
+        # env:
+        #  KFP_HOST: ${{ secrets.KFP_HOST }}
+        run: |
+          python3 pipeline.py
