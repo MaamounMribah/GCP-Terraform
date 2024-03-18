@@ -9,6 +9,9 @@ jobs:
   build-and-push-docker:
     runs-on: ubuntu-latest
     steps:
+      - name: Docker Cleanup
+        run: | 
+          docker system prune -af
       - uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
