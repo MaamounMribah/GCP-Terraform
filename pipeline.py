@@ -111,7 +111,7 @@ def llm_pipeline():
 token = "Bearer " + "2c5g0Ejfb17lNG3joEIBbAK1boi_7gA7ZiSVTvdbRmsfvMmaa"
 # Initialize the KFP client with the token
 #kfp_client = Client(host=endpoint, existing_token=token)
-endpoint="http://34.102.213.226/"
+endpoint="http://34.159.71.14/"
 kfp_client=Client(host=endpoint)
 
 
