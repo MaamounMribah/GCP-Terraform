@@ -47,7 +47,7 @@ def preprocess_data_op(dataset : str, split: str) :
 def preprocess_data_op() :
     return dsl.ContainerOp(
         name="Data Preprocessing",
-        image='maamounm/llm_pipeline:latest', 
+        image='europe-west3-docker.pkg.dev/qwiklabs-gcp-04-9204134e63b6/maamoun/llm_pipeline:latest', 
         command=['python3', '/app/Preprocess_data/preprocess_data.py'],
         arguments=[],
     )
@@ -56,7 +56,7 @@ def preprocess_data_op() :
 def bert_output_before_fine_tuning_op():
     return dsl.ContainerOp(
         name="output before fine tuning",
-        image='maamounm/llm_pipeline:latest',
+        image='europe-west3-docker.pkg.dev/qwiklabs-gcp-04-9204134e63b6/maamoun/llm_pipeline:latest',
         command=['python3','/app/Model_output/model_output.py'],
         #arguments=[model_path,test_data],
     )
@@ -65,7 +65,7 @@ def bert_fine_tuned_model_output_op():
     
     return dsl.ContainerOp(
         name="output after fine tuning",
-        image='maamounm/llm_pipeline:latest',
+        image='europe-west3-docker.pkg.dev/qwiklabs-gcp-04-9204134e63b6/maamoun/llm_pipeline:latest',
         command=['python3','/app/Fine_tuned_model_output/fine_tuned_model_output.py'],
         #arguments=[model_path,test_data],
         #resource_requests={"cpu": "4", "memory": "4Gi"},
@@ -77,7 +77,7 @@ def evaluate_fine_tuned_model_op():
     #model_path='model'
     return dsl.ContainerOp(
         name="fine tuned model evaluation",
-        image='maamounm/llm_pipeline:latest',
+        image='europe-west3-docker.pkg.dev/qwiklabs-gcp-04-9204134e63b6/maamoun/llm_pipeline:latest',
         command=['python3','/app/evaluate_fine_tuned_model/evaluate_fine_tuned_model.py'],
         #arguments=[model_path,test_data],
     )
@@ -106,11 +106,12 @@ def llm_pipeline():
 
 # Your Ngrok host URL (API endpoint, not the UI)
 #endpoint = "https://stable-genuinely-flea.ngrok-free.app/"
-endpoint="http://35.242.192.52/"
+
 # Assuming `credentials` is a bearer token for this example
 token = "Bearer " + "2c5g0Ejfb17lNG3joEIBbAK1boi_7gA7ZiSVTvdbRmsfvMmaa"
 # Initialize the KFP client with the token
 #kfp_client = Client(host=endpoint, existing_token=token)
+endpoint="http://34.102.213.226/"
 kfp_client=Client(host=endpoint)
 
 
